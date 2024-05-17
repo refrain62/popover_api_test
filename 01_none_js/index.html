@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSを使わないポップオーバー</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 16px;
+      color: #2f2f2f;
+      background-color: #fafafa;
+    }
+
+    h1 {
+      font-weight: normal;
+      font-size: 1.5rem;
+    }
+
+    button {
+      width: 200px;
+      height: 40px;
+      border: 2px solid #2f2f2f;
+      border-radius: 20px;
+      cursor: pointer;
+      background: #ffffff;
+      color: #2f2f2f;
+      font-size: 16px;
+    }
+
+    .container {
+      padding: 48px;
+    }
+
+    /* :popover-openを使って表示時のスタイルを適用 */
+    .popover-content:popover-open {
+      width: 300px;
+      height: 120px;
+      border-radius: 8px;
+      border: none;
+      padding: 24px;
+      box-shadow: 8px 8px 10px #c9c9c9;
+      background: #ffffff;
+    }
+
+    /* 背景にスタイルを適用する場合は::backdropを使用する */
+    .popover-content::backdrop {
+      background-color: #505050;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ▼ポップオーバーを制御するボタン -->
+    <!-- 制御ボタンに popovertargetでIDを指定 -->
+    <button popovertarget="popover1">popover1</button>
+    <!-- ▼ポップオーバー本体 -->
+    <!-- popover 属性に本体のIDを指定 -->
+    <div id="popover1" popover class="popover-contant">
+      <p>JavaScriptを使わずに最低限の機能を実現できます。</p>
+    </div>
+
+    <!-- ▼ポップオーバーを制御するボタン -->
+    <button popovertarget="popover2">popover2</button>
+    <!-- ▼ポップオーバー本体 -->
+    <div id="popover2" popover class="popover-contant">
+      <p>2つめのポップオーバーを開くと、1つ目は自動的に閉じます。長文にすると画面幅を超えると自動的に開業して表示してくれます。</p>
+    </div>
+
+    <ul>
+      <li>最上位レイヤに配置される。z-indexは無視される。</li>
+      <li>ポップアップの外側をクリックかEscキーで閉じる</li>
+      <li>複数ある場合は勝手に他を閉じる</li>
+      <li>:popover-open： ポップオーバーが開いた状態を指す疑似クラス。</li>
+      <li>::backdrop： ポップオーバーの後ろに背景として配置される疑似要素。</li>
+    </ul>
+
+  </div>
+</body>
+</html>
