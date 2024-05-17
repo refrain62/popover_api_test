@@ -46,7 +46,7 @@ const createToastElm = (message, cssName) => {
   // コンテンツ
   const content = document.createElement("p");
   content.textContent = message;
-  content.classList.add("totast-content");
+  content.classList.add("toast-content");
   toast.appendChild(content);
 
   // 閉じるボタン
