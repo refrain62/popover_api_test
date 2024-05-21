@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>入れ子になったポップオーバー</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <ul class="navigation-list">
+          <li class="navigation-list-item">
+            <a href="#">Home</a>
+          </li>
+
+          <li class="navigation-list-item">
+            <a href="#">About</a>
+          </li>
+
+          <li class="navigation-list-item  popover-container"">
+            <a href="#" class="arrow">Portfolio</a>
+
+            <!-- 2階層目 -->
+            <div class="popover popover-portfolio" popover>
+              <ul class="child-list">
+                <li class="child-list-item popover-container">
+                  <a href="#" class="arrow arrow__right">Web Design</a>
+
+                  <!-- 3階層目 -->
+                  <div class="popover popover-webdesign" popover>
+                    <ul class="child-list">
+                      <li class="child-list-item">
+                        <a href="#">Shopping site</a>
+                      </li>
+                      
+                      <li class="child-list-item">
+                        <a href="#">Corporate site</a>
+                      </li>
+                      
+                      <li class="child-list-item">
+                        <a href="#">Blog</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="child-list-item popover-container">
+                  <a href="#" class="arrow arrow__right">UI Design</a>
+
+                  <!--3階層目 -->
+                  <div class="popover popover-uidesign" popover>
+                    <ul class="child-list">
+                      <li class="child-list-item">
+                        <a href="#">SNS</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="navigation-list-item">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <script src="./menu.js" defer></script>
+</body>
+</html>
